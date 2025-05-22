@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your site description">
+    <title>Aley Record Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/802e61fb40.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <img src="images/logopng.png" class="logo">
+                <ul>
+                    <li><a href="#header">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#portfolio">Riwayat</a></li>
+                    <li><a href="#contact">Booking</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+     <!----  <p>Professional Music Studio  -->
+                <h1>Bikin Musik Sampe <span>Rilis?</span><br> Gampang! Kami urus semuanya!</h1>
+            </div>
+        </div>
+    </div>
+
+<!-- ABOUT PAGE  -->           
+<div id="about" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/U5dF3y6nRSE" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="about-col-2">   <!-- Hapus titik (.) yang salah -->
+                <h1 class="sub-title">Tentang Kami</h1>
+                <p>Aley Record merupakan studio musik profesional yang berlokasi di Surabaya, sejak 2012 kami menawarkan recording, mixing, mastering, serta dukungan perilisan dengan standar industri. 
+                    Percayakan karya Anda kepada kami untuk mewujudkan simfoni yang tak hanya bernilai estetis, tetapi juga siap bersaing di ranah industri.
+                </p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('Fokus', event)">Fokus</p>
+                <p class="tab-links" onclick="opentab('Standar', event)">Standar</p>
+                <p class="tab-links" onclick="opentab('Komitmen', event)">Komitmen</p>
+            </div>
+            <div class="tab-contents-container">
+                <div class="tab-contents active-tab" id="Fokus">
+                    <ul>
+                        <li><span>Dukungan Klien </span><br>Kami sangat menjunjung tinggi kebutuhan dan visi setiap musisi melalui berbagai arahan dan transparasi yang kami berikan</li>
+                        <li><span>Edukasi</span><br>Menyediakan lingkungan kreatif yang mendukung eksplorasi musikal serta memberikan edukasi terhadap klien kami</li>
+                        <li><span>Inovasi</span><br>Selalu beradaptasi, berintegrasi dan menyelaraskan kinerja dan output kami dengan tren industri musik untuk hasil yang relevan</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Standar">
+                    <ul>
+                        <li><span>Teknologi Kelas Dunia</span><br> Peralatan rekaman, mixing, dan mastering serta skill yang dimiliki kru kami berstandar industri internasional untuk hasil maksimal</li>
+                        <li><span>Presisi & Kualitas</span><br>Setiap tahap produksi dikurasi profesional dan melalui quality control agar siap bersaing di pasar</li>
+                        <li><span>Sonic Identity</span><br>Karakter suara yang terdefinisi dengan clarity, depth, dan balance yang khas dari kami, optimal untuk distribusi komersial</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="Komitmen">
+                    <ul>
+                        <li><span>Kolaborasi Total</span><br> Kami bekerja bersama artis untuk mewujudkan visi musik mereka dengan perhatian penuh pada detail</li>
+                        <li><span>Dukungan Berkelanjutan</span><br>Dari tahap pra-produksi hingga pasca-produksi, kami memastikan setiap proyek mencapai potensinya</li>
+                        <li><span> Kepuasan Prioritas Utama</span><br>Revisi fleksibel dengan layanan konsultasi gratis memastikan hasil akhir sesuai ekspektasi profesional</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----------------SERVICE--------------------- -->
+
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Layanan</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-microphone-lines"></i>
+                <h2>Opus</h2>
+                <p>Layanan berupa aransemen profesional maupun layanan Recording berkualitas tinggi.</p>
+                <a href="#">Selengkapnya</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-user-gear"></i>
+                <h2>Aural</h2>
+                <p>Layanan mixing dan mastering presisi untuk suara yang jernih, deep, dan warm dengan detail optimal</p>
+                <a href="#">Selengkapnya</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-radio"></i>
+                <h2>Prestige </h2>
+                <p>Solusi lengkap dari aransemen, produksi, hingga mastering, termasuk distribusi di platform digital.</p>
+                <a href="#">Selengkapnya</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-------------------PORTOFOLIO----------------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/w1.png">
+                <div class="layer">
+                    <h3>Erat Lekat</h3>
+                    <p>Sebuah Kisah dari eratnya persahabatan, menembus lorong peradaban</p>
+                    <a href="https://open.spotify.com/track/7iP4EfuTgTaBZfH2wTdwdu?si=f5b8eee4f0e54b36" target="_blank">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/w2.png">
+                <div class="layer">
+                    <h3>Tersenyum</h3>
+                    <p>Pikiran yang membisu, dibawah langit biru..tetaplah tersenyum..</p>
+                    <a href="https://open.spotify.com/track/7qZfAkepD3HxZdowiy3o8r?si=957e539168d54022" target="_blank">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/w3.png">
+                <div class="layer">
+                    <h3>Promise</h3>
+                    <p>Janji-janji kehidupan..menyadarkan semua tujuan..percayalah!</p>
+                    <a href="https://open.spotify.com/track/1OJezuEvX7VsCPoXsnF7nv?si=db610cd4d58a4837" target="_blank">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <a href="https://www.youtube.com/@aleyrecords?sub_confirmation=1" target="_blank" class="btn">Lihat Lebih Banyak</a>
+        </div>
+    </div>
+    <!-- =====================contact=================  -->
+    <div id="contact">
+        <div class="container">
+            <h1 class="sub-title">Pemesanan Sesi</h1>
+            <div class="booking-guide">
+                <div class="guide-steps">
+                    <div class="step">
+                        <i class="fas fa-1"></i>
+                        <h3>Pilih Paket</h3>
+                        <p>Pilih paket layanan yang sesuai dengan kebutuhan Anda</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-2"></i>
+                        <h3>Isi Formulir</h3>
+                        <p>Lengkapi data diri dan paket yang dipilih</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-3"></i>
+                        <h3>Konfirmasi</h3>
+                        <p>Tim kami akan menghubungi Anda untuk konfirmasi dan pembayaran</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" name="name" placeholder="Nama" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="tel" name="whatsapp" placeholder="Nomor WhatsApp" required>
+                        <select name="package" required>
+                            <option value="" disabled selected>Pilih Paket</option>
+                            <option value="Paket Opus">Paket Opus</option>
+                            <option value="Paket Aural">Paket Aural</option>
+                            <option value="Paket Prestige">Paket Prestige</option>
+                        </select>
+                        <button type="submit" class="tombol">Kirim</button>
+                        <p class="form-note">Pastikan data yang Anda masukkan benar dan valid agar tim Customer Service kami dapat menghubungi Anda tanpa kendala</p>
+                    </form>
+                </div>
+                <div class="custom-service">
+                    <h3>Butuh Layanan Kustom?</h3>
+                    <p>Hubungi kami untuk layanan khusus atau pertanyaan lebih lanjut</p>
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/628563309832" class="contact-btn admin">
+                            <i class="fab fa-whatsapp"></i> Admin
+                        </a>
+                        <a href="https://wa.me/6285133262359" class="contact-btn cs">
+                            <i class="fab fa-whatsapp"></i> Customer Service
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Info -->
+<div class="contact-info">
+    <h3>
+        Kontak Kami
+        <button class="close-btn">&times;</button>
+    </h3>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:dummy@email.com">dummy@email.com</a></p>
+    <p><i class="fab fa-whatsapp"></i> Admin: <a href="https://wa.me/628563309832">+62 856-3309-832</a></p>
+    <p><i class="fab fa-whatsapp"></i> CS: <a href="https://wa.me/6285133262359">+62 851-3326-2359</a></p>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    
+    function opentab(tabname, event){
+        for (let tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (let tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-link");
+            tabcontent.classList.remove("active-tab");
+        }
+        // Activate the clicked tab link
+        if (event && event.currentTarget) {
+            event.currentTarget.classList.add("active-link");
+        }
+        // Show the corresponding tab content
+        document.getElementById(tabname).classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+    // Contact info popup functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactInfo = document.querySelector('.contact-info');
+        const closeBtn = document.querySelector('.close-btn');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        // Show popup after 2 seconds
+        setTimeout(() => {
+            contactInfo.classList.add('show');
+        }, 2000);
+
+        // Close popup when close button is clicked
+        closeBtn.addEventListener('click', () => {
+            contactInfo.classList.remove('show');
+            contactInfo.classList.add('hide');
+        });
+
+        // Show popup when scrolling to bottom
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                contactInfo.classList.add('show');
+                contactInfo.classList.remove('hide');
+            }
+        });
+
+        // Show popup when clicking specific nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = e.target.getAttribute('href');
+                if (href === '#about' || href === '#services' || href === '#contact') {
+                    // Wait for scroll to complete
+                    setTimeout(() => {
+                        contactInfo.classList.add('show');
+                        contactInfo.classList.remove('hide');
+                    }, 1000);
+                }
+            });
+        });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const form = this;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+
+        // Show loading state
+        submitButton.textContent = 'Mengirim...';
+        submitButton.disabled = true;
+
+        // Get form data
+        const formData = new FormData(form);
+        const data = {};
+        for (let [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+        data.timestamp = new Date().toLocaleString('id-ID'); // Optional: add timestamp
+
+        // Submit to Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbxSx0hqJEmmMMoKVRmuv8n2JJaqyuqf4gTspbkE9GIXhwzDjMopduhXkGBPJANjFa1w/exec', {
+            method: 'POST',
+            mode: 'no-cors', // Required for cross-origin requests without CORS headers
+            cache: 'no-cache', // Prevent caching
+            headers: {
+                'Content-Type': 'application/json' // Set header Content-Type
+            },
+             redirect: 'follow', // Allow redirects
+            body: JSON.stringify(data) // Kirim data sebagai JSON string
+        })
+        .then(response => {
+            // Dalam mode 'no-cors', response.ok selalu true dan status 0
+            console.log('Form submission initiated. Check Google Sheet for data.');
+            alert('Terima kasih! Data Anda telah berhasil dikirim (kemungkinan).');
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error sending form data:', error);
+            alert('Maaf, terjadi kesalahan saat mengirim data. Silakan coba lagi.');
+        })
+        .finally(() => {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+    });
+</script>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="copyright">© 2025 Pocongcyber77. All rights reserved.</p>
+            <p class="address">Jl. Kalijudan Taruna IV No.30, Kalijudan, Kec. Mulyorejo, Surabaya, Jawa Timur 60114</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+<script src="script.js"></script>
+</html>
+
