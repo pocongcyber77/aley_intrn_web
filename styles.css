@@ -2233,28 +2233,81 @@ nav {
     }
 }
 
-/* Hide audio wave on mobile and tablet */
+/* Completely hide all wave and radar elements on mobile and tablet */
 @media (max-width: 1023px) {
-    .audio-wave {
-        display: none !important;
-    }
-    
-    .wave {
-        display: none !important;
-    }
-    
+    /* Hide audio wave elements */
+    .audio-wave,
+    .wave,
     .wave-path {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        margin: -1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    /* Hide radar and circle elements */
+    .svg-circles,
+    .radar-circle,
+    .header-circles,
+    .about-circles,
+    .services-circles,
+    .faq-circles,
+    .contact-circles {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        margin: -1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    /* Disable animations */
+    .audio-wave *,
+    .wave *,
+    .wave-path *,
+    .svg-circles *,
+    .radar-circle * {
+        animation: none !important;
+        transition: none !important;
     }
 }
 
 /* Additional mobile-specific adjustments */
 @media (max-width: 430px) {
+    /* Ensure complete removal on mobile */
     .audio-wave,
     .wave,
     .wave-path,
     .svg-circles,
-    .radar-circle {
+    .radar-circle,
+    .header-circles,
+    .about-circles,
+    .services-circles,
+    .faq-circles,
+    .contact-circles {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        position: absolute !important;
+        overflow: hidden !important;
+        clip: rect(0 0 0 0) !important;
+        margin: -1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+        pointer-events: none !important;
     }
 }
