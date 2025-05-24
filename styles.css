@@ -2244,41 +2244,41 @@ nav {
 /* Additional adjustments for smaller mobile devices */
 @media (max-width: 480px) {
     .container {
-        padding: 45px 60px;  /* 1.5x current padding */
+        padding: 15px 20px;  /* Reset to original padding */
     }
 
     .header-text {
-        margin-top: 170%;    /* Increased margin */
-        padding: 0 45px;     /* 1.5x current padding */
+        margin-top: 130%;    /* Reset to original margin */
+        padding: 0 15px;     /* Reset to original padding */
     }
 
     .about-col-1,
     .about-col-2 {
-        padding: 45px;       /* 1.5x current padding */
+        padding: 15px;       /* Reset to original padding */
     }
 
     .services-list div {
-        padding: 75px 60px;  /* 1.5x current padding */
+        padding: 25px 20px;  /* Reset to original padding */
     }
 
     .work {
-        margin: 24px;        /* 1.5x current margin */
+        margin: 8px;         /* Reset to original margin */
     }
 
     .faq-container {
-        padding: 0 45px;     /* 1.5x current padding */
+        padding: 0 15px;     /* Reset to original padding */
     }
 
     .booking-guide {
-        padding: 45px;       /* 1.5x current padding */
+        padding: 15px;       /* Reset to original padding */
     }
 
     .guide-steps,
     .custom-service {
-        padding: 60px;       /* 1.5x current padding */
+        padding: 20px;       /* Reset to original padding */
     }
 
     .contact-form {
-        padding: 60px;       /* 1.5x current padding */
+        padding: 20px;       /* Reset to original padding */
     }
 }
