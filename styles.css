@@ -2123,3 +2123,70 @@ nav {
         text-align: center;
     }
 }
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 60px;
+        margin: 0 80px;
+    }
+
+    .hero {
+        padding: 120px 0;
+        margin: 0 60px;
+    }
+
+    .hero-content {
+        max-width: 600px;
+        margin: 0 60px;
+    }
+
+    .section {
+        padding: 80px 60px;
+        margin: 0 60px;
+    }
+
+    .card {
+        margin: 20px 60px;
+    }
+
+    .contact-form {
+        max-width: 600px;
+        margin: 0 60px;
+    }
+
+    .footer-content {
+        padding: 0 60px;
+        margin: 0 60px;
+    }
+
+    .footer-bottom {
+        padding: 20px 60px;
+        margin: 0 60px;
+    }
+
+    /* Additional elements that need wider margins */
+    .services-list {
+        margin: 0 60px;
+    }
+
+    .work-list {
+        margin: 0 60px;
+    }
+
+    .faq-container {
+        margin: 40px 60px;
+    }
+
+    .booking-guide {
+        margin: 0 60px;
+    }
+
+    .guide-steps {
+        margin: 0 60px;
+    }
+
+    .custom-service {
+        margin: 0 60px;
+    }
+}
