@@ -354,7 +354,7 @@ nav ul li a.active::after {
 
 /* Responsive line-height adjustments */
 @media (max-width: 1024px) {
-    .header-text h1 {
+.header-text h1 {
         line-height: 1.1;
     }
 }
@@ -369,7 +369,7 @@ nav ul li a.active::after {
     .header-text h1 {
         line-height: 0.9;
     }
-}
+}   
 
 /*----------------ABOUT PAGE----------------*/
 
@@ -2121,164 +2121,5 @@ nav {
     .contact-form input,
     .contact-form select {
         text-align: center;
-    }
-}
-
-/* Hide animations on mobile and tablet */
-@media (max-width: 1024px) {
-    .wave {
-        display: none !important;
-    }
-    
-    .radar-circle {
-        display: none !important;
-    }
-    
-    .radar-circle::before {
-        display: none !important;
-    }
-    
-    .radar-circle::after {
-        display: none !important;
-    }
-}
-
-/* Show animations only on desktop */
-@media (min-width: 1025px) {
-    .wave {
-        display: block;
-    }
-    
-    .radar-circle {
-        display: block;
-    }
-    
-    .radar-circle::before {
-        display: block;
-    }
-    
-    .radar-circle::after {
-        display: block;
-    }
-}
-
-/* Responsive adjustments for mobile and tablet */
-@media (max-width: 1024px) {
-    .container {
-        padding: 60px 75px;  /* 1.5x current padding */
-        margin: 0 auto;
-        max-width: 100%;
-    }
-
-    /* Header text spacing */
-    .header-text {
-        margin-top: 160%;  /* Increased margin */
-        padding: 0 60px;   /* 1.5x current padding */
-    }
-
-    /* About section spacing */
-    .about-col-1,
-    .about-col-2 {
-        padding: 60px;     /* 1.5x current padding */
-        margin-bottom: 90px; /* 1.5x current margin */
-    }
-
-    /* Services section spacing */
-    .services-list {
-        gap: 90px;         /* 1.5x current gap */
-        padding: 60px 0;   /* 1.5x current padding */
-    }
-
-    .services-list div {
-        margin: 30px;      /* 1.5x current margin */
-        padding: 90px 75px; /* 1.5x current padding */
-    }
-
-    /* Portfolio section spacing */
-    .work-list {
-        gap: 90px;         /* 1.5x current gap */
-        padding: 60px 0;   /* 1.5x current padding */
-    }
-
-    .work {
-        margin: 30px;      /* 1.5x current margin */
-    }
-
-    /* FAQ section spacing */
-    .faq-container {
-        padding: 0 60px;   /* 1.5x current padding */
-        margin: 90px auto; /* 1.5x current margin */
-    }
-
-    .faq-item {
-        margin: 45px 0;    /* 1.5x current margin */
-    }
-
-    /* Contact section spacing */
-    .booking-guide {
-        padding: 60px;     /* 1.5x current padding */
-        gap: 75px;         /* 1.5x current gap */
-    }
-
-    .guide-steps,
-    .custom-service {
-        padding: 75px;     /* 1.5x current padding */
-        margin: 45px 0;    /* 1.5x current margin */
-    }
-
-    .contact-form {
-        padding: 75px;     /* 1.5x current padding */
-        margin: 60px auto; /* 1.5x current margin */
-    }
-
-    /* Footer spacing */
-    .footer {
-        padding: 90px 60px; /* 1.5x current padding */
-    }
-
-    .footer-content {
-        padding: 0 60px;   /* 1.5x current padding */
-    }
-}
-
-/* Additional adjustments for smaller mobile devices */
-@media (max-width: 480px) {
-    .container {
-        padding: 15px 20px;  /* Reset to original padding */
-    }
-
-    .header-text {
-        margin-top: 130%;    /* Reset to original margin */
-        padding: 0 15px;     /* Reset to original padding */
-    }
-
-    .about-col-1,
-    .about-col-2 {
-        padding: 15px;       /* Reset to original padding */
-    }
-
-    .services-list div {
-        padding: 25px 20px;  /* Reset to original padding */
-    }
-
-    .work {
-        margin: 8px;         /* Reset to original margin */
-    }
-
-    .faq-container {
-        padding: 0 15px;     /* Reset to original padding */
-    }
-
-    .booking-guide {
-        padding: 15px;       /* Reset to original padding */
-    }
-
-    .guide-steps,
-    .custom-service {
-        padding: 20px;       /* Reset to original padding */
-    }
-
-    .contact-form {
-        padding: 20px;       /* Reset to original padding */
     }
 }
