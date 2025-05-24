@@ -2161,3 +2161,124 @@ nav {
         display: block;
     }
 }
+
+/* Responsive adjustments for mobile and tablet */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px 25px;  /* Increased padding for better spacing */
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    /* Header text spacing */
+    .header-text {
+        margin-top: 120%;
+        padding: 0 20px;
+    }
+
+    /* About section spacing */
+    .about-col-1,
+    .about-col-2 {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    /* Services section spacing */
+    .services-list {
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .services-list div {
+        margin: 10px;
+        padding: 30px 25px;
+    }
+
+    /* Portfolio section spacing */
+    .work-list {
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    .work {
+        margin: 10px;
+    }
+
+    /* FAQ section spacing */
+    .faq-container {
+        padding: 0 20px;
+        margin: 30px auto;
+    }
+
+    .faq-item {
+        margin: 15px 0;
+    }
+
+    /* Contact section spacing */
+    .booking-guide {
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .guide-steps,
+    .custom-service {
+        padding: 25px;
+        margin: 15px 0;
+    }
+
+    .contact-form {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    /* Footer spacing */
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-content {
+        padding: 0 20px;
+    }
+}
+
+/* Additional adjustments for smaller mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 20px;  /* Slightly reduced padding for very small screens */
+    }
+
+    .header-text {
+        margin-top: 130%;
+        padding: 0 15px;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        padding: 15px;
+    }
+
+    .services-list div {
+        padding: 25px 20px;
+    }
+
+    .work {
+        margin: 8px;
+    }
+
+    .faq-container {
+        padding: 0 15px;
+    }
+
+    .booking-guide {
+        padding: 15px;
+    }
+
+    .guide-steps,
+    .custom-service {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
