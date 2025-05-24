@@ -1499,7 +1499,7 @@ nav ul li a.active::after {
     .hamburger { display: block; }
     nav ul {
         position: fixed;
-        top: 0;
+        top: -10;
         right: -300px;
         width: 300px;
         height: 100vh;
