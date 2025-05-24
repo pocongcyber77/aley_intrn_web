@@ -1734,7 +1734,7 @@ nav, nav ul {
 /* Hide radar circles on screens smaller than 1440px */
 @media (max-width: 1439px) {
     .svg-circles {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -2230,5 +2230,31 @@ nav {
 
     .custom-service {
         margin: 0 300px;
+    }
+}
+
+/* Hide audio wave on mobile and tablet */
+@media (max-width: 1023px) {
+    .audio-wave {
+        display: none !important;
+    }
+    
+    .wave {
+        display: none !important;
+    }
+    
+    .wave-path {
+        display: none !important;
+    }
+}
+
+/* Additional mobile-specific adjustments */
+@media (max-width: 430px) {
+    .audio-wave,
+    .wave,
+    .wave-path,
+    .svg-circles,
+    .radar-circle {
+        display: none !important;
     }
 }
