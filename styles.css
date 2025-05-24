@@ -2123,3 +2123,41 @@ nav {
         text-align: center;
     }
 }
+
+/* Hide animations on mobile and tablet */
+@media (max-width: 1024px) {
+    .wave {
+        display: none !important;
+    }
+    
+    .radar-circle {
+        display: none !important;
+    }
+    
+    .radar-circle::before {
+        display: none !important;
+    }
+    
+    .radar-circle::after {
+        display: none !important;
+    }
+}
+
+/* Show animations only on desktop */
+@media (min-width: 1025px) {
+    .wave {
+        display: block;
+    }
+    
+    .radar-circle {
+        display: block;
+    }
+    
+    .radar-circle::before {
+        display: block;
+    }
+    
+    .radar-circle::after {
+        display: block;
+    }
+}
