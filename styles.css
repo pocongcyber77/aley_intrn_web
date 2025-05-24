@@ -2233,12 +2233,15 @@ nav {
     }
 }
 
-/* Completely hide all wave and radar elements on mobile and tablet */
+/* Completely remove all wave and radar elements on mobile and tablet */
 @media (max-width: 1023px) {
-    /* Hide audio wave elements */
+    /* Remove audio wave elements */
     .audio-wave,
     .wave,
-    .wave-path {
+    .wave-path,
+    .audio-wave *,
+    .wave *,
+    .wave-path * {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -2250,16 +2253,26 @@ nav {
         margin: -1px !important;
         padding: 0 !important;
         border: 0 !important;
+        transform: scale(0) !important;
+        pointer-events: none !important;
+        z-index: -9999 !important;
     }
 
-    /* Hide radar and circle elements */
+    /* Remove radar and circle elements */
     .svg-circles,
     .radar-circle,
     .header-circles,
     .about-circles,
     .services-circles,
     .faq-circles,
-    .contact-circles {
+    .contact-circles,
+    .svg-circles *,
+    .radar-circle *,
+    .header-circles *,
+    .about-circles *,
+    .services-circles *,
+    .faq-circles *,
+    .contact-circles * {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -2271,22 +2284,31 @@ nav {
         margin: -1px !important;
         padding: 0 !important;
         border: 0 !important;
+        transform: scale(0) !important;
+        pointer-events: none !important;
+        z-index: -9999 !important;
     }
 
-    /* Disable animations */
+    /* Disable all animations and transitions */
     .audio-wave *,
     .wave *,
     .wave-path *,
     .svg-circles *,
-    .radar-circle * {
+    .radar-circle *,
+    .header-circles *,
+    .about-circles *,
+    .services-circles *,
+    .faq-circles *,
+    .contact-circles * {
         animation: none !important;
         transition: none !important;
+        transform: none !important;
     }
 }
 
 /* Additional mobile-specific adjustments */
 @media (max-width: 430px) {
-    /* Ensure complete removal on mobile */
+    /* Force remove all wave and circle elements on mobile */
     .audio-wave,
     .wave,
     .wave-path,
@@ -2296,7 +2318,17 @@ nav {
     .about-circles,
     .services-circles,
     .faq-circles,
-    .contact-circles {
+    .contact-circles,
+    .audio-wave *,
+    .wave *,
+    .wave-path *,
+    .svg-circles *,
+    .radar-circle *,
+    .header-circles *,
+    .about-circles *,
+    .services-circles *,
+    .faq-circles *,
+    .contact-circles * {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -2308,6 +2340,27 @@ nav {
         margin: -1px !important;
         padding: 0 !important;
         border: 0 !important;
+        transform: scale(0) !important;
         pointer-events: none !important;
+        z-index: -9999 !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Override any potential conflicting styles */
+@media (max-width: 1023px) {
+    body * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    #header,
+    #about,
+    #services,
+    #portfolio,
+    #contact,
+    #faq {
+        background-image: none !important;
     }
 }
