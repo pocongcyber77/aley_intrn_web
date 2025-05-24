@@ -65,9 +65,10 @@ body{
 
 /* Container class - used for main content wrapper */
 .container{
-    padding: 10px 10%; /* Adds padding: 10px top-bottom, 10% left-right */
+    padding: 10px 10%;
     overflow-x: hidden;
-    position: relative; /* Added to ensure proper stacking context */
+    position: relative;
+    margin-bottom: 20px;
 }
 
 /* Navigation styling - main menu container */
@@ -221,9 +222,103 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-.header-text{
-    margin-top: 30%;
+.header-text {
+    margin-top: 40%;
     font-size: 30px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    padding-left: 0;
+}
+
+.header-text h1 {
+    margin-top: 1%;
+    margin-bottom: 10px; 
+    font-size: 50px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+    letter-spacing: 0.5px;
+}
+
+.header-text h1 span{ 
+    color: #C71F37;
+    font-weight: 700;
+    letter-spacing: 1px;
+}   
+
+/* Enhanced Responsive header text positioning */
+@media (max-width: 1920px) {
+    .header-text {
+        margin-top: 50%;
+    }
+}
+
+@media (max-width: 1800px) {
+    .header-text {
+        margin-top: 60%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .header-text {
+        margin-top: 70%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .header-text {
+        margin-top: 80%;
+    }
+}
+
+@media (max-width: 1366px) {
+    .header-text {
+        margin-top: 85%;
+    }
+}
+
+@media (max-width: 1280px) {
+    .header-text {
+        margin-top: 90%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-text {
+        margin-top: 95%;
+    }
+}
+
+@media (max-width: 900px) {
+    .header-text {
+        margin-top: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-text {
+        margin-top: 115%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-text {
+        margin-top: 125%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text {
+        margin-top: 135%;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-text {
+        margin-top: 145%;
+    }
 }
 
 /* Animasi untuk teks */
@@ -257,19 +352,24 @@ nav ul li a.active::after {
     animation-delay: 0.2s;
 }
 
-.header-text h1 {
-    margin-top: 1%;
-    margin-bottom: 10px; 
-    font-size: 50px;
-    line-height: 1.5;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.4s;
+/* Responsive line-height adjustments */
+@media (max-width: 1024px) {
+    .header-text h1 {
+        line-height: 1.1;
+    }
 }
 
-.header-text h1 span{ 
-    color: #C71F37; /* Styling for tkey service */
-}   
+@media (max-width: 768px) {
+    .header-text h1 {
+        line-height: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text h1 {
+        line-height: 0.9;
+    }
+}
 
 /*----------------ABOUT PAGE----------------*/
 
@@ -288,7 +388,9 @@ nav ul li a.active::after {
 #about {
     padding: 85px 0 0;
     color: #ababab;
-    margin-bottom: -160px;  /* Added large negative margin to pull up Services section */
+    margin-bottom: -80px;  /* Reduced from -160px to -80px */
+    position: relative;
+    z-index: 0; /* Added to push this section to the back */
 }
 /* Container untuk flex layout */
 .row {
@@ -490,17 +592,22 @@ nav ul li a.active::after {
 
 /*-------------------services---------------------*/
 #services {
-    padding-top: 60px; /* Add padding to account for fixed navbar */
+    padding-top: 60px; /* Reduced from 120px to 60px */
     margin-top: 0;
     position: relative;
-    z-index: 1;  /* Lower z-index than navigation */
-    margin-bottom: 120px;
+    z-index: 0;
+    margin-bottom: 60px; /* Reduced from 120px to 60px */
+    overflow: hidden; /* Remove scrollbar */
+    position: relative;
+    z-index: 0; /* Added to push this section to the back */
 }
 
 #services h1 {
-    padding: 50px 0;  /* Increased padding to match portfolio */
+    padding: 30px 0;  /* Reduced padding to prevent too much space */
     color: white !important;
     margin-top: 0;  /* Reset any top margin */
+    position: relative;
+    z-index: 0;  /* Ensure heading stays behind navbar */
 }
 
 .services-list{
@@ -508,6 +615,10 @@ nav ul li a.active::after {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 0;  /* Reset top margin */
+    position: relative;
+    z-index: 0;  /* Ensure service items stay behind navbar */
+    overflow: hidden; /* Remove scrollbar */
+    align-items: start; /* Prevent grid items from stretching vertically */
 }
 
 .services-list div{
@@ -516,9 +627,11 @@ nav ul li a.active::after {
     font-size: 13px;
     font-weight: 300;
     border-radius: 10px;
-    transition: background 0.5s, transform 0.3s;
+    transition: background 0.5s, transform 0.3s; 
     opacity: 0;
     animation: fadeInUp 0.8s ease forwards;
+    position: relative;
+    z-index: 0;  /* Ensure individual service items stay behind navbar */
 }
 .services-list div i{
     font-size: 50px;
@@ -548,7 +661,10 @@ nav ul li a.active::after {
 
 /*--------------------PORTOFOLIO---------------------*/
 #portfolio {
-    padding-top: 40px;  /* Added top padding to complement the margin */
+    padding-top: 20px;  /* Reduced from 40px to 20px */
+    margin-top: 0;
+    position: relative;
+    z-index: 0; /* Added to push this section to the back */
 }
 
 #portfolio h1 {
@@ -692,13 +808,16 @@ nav ul li a.active::after {
     background: rgba(38, 38, 38, 0.9);
     padding: 20px;
     border-radius: 10px;
-    border-left: 3px solid #C71F37;
-    transition: transform 0.3s ease;
+    border-left: 3px solid rgba(199, 31, 55, 0.2); /* Subtle transparent red border by default */
+    transition: transform 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for border color and box shadow */
     flex: 1;
+    cursor: pointer; /* Indicate interactivity */
 }
 
 .step:hover {
     transform: translateY(-5px);
+    border-left-color: #C71F37; /* Make border solid red on hover */
+    box-shadow: 0 5px 15px rgba(199, 31, 55, 0.3); /* Add a subtle box shadow on hover */
 }
 
 .step i {
@@ -825,15 +944,28 @@ nav ul li a.active::after {
 
 /* Styling untuk section */
 .section {
-    min-height: 100vh;
-    padding: 80px 0;
-    scroll-margin-top: 80px; /* Untuk offset scroll */
+    min-height: auto;
+    padding: 40px 0;
     position: relative;
+    overflow: hidden;
 }
 
 /* Kompensasi untuk konten agar tidak tertutup navbar */
 #header, #about, #services, #portfolio, #contact {
-    padding-top: 60px;       /* Kurangi padding-top sesuai navbar yang lebih kecil */
+    scroll-margin-top: 80px;  /* Adjust scroll margin to account for fixed navbar */
+    position: relative;
+}
+
+/* Ensure proper spacing for sections */
+#about,
+#services,
+#portfolio,
+#contact,
+#faq {
+    padding-top: 80px;  /* Add padding to prevent content from being hidden under navbar */
+    margin-top: -80px;  /* Negative margin to offset the padding */
+    position: relative;
+    z-index: 0; /* Added to push these sections to the back */
 }
 
 /* Style untuk tombol "Lihat Lebih Banyak" */
@@ -904,41 +1036,72 @@ nav ul li a.active::after {
     bottom: 20px;
     left: 20px;
     background: rgba(38, 38, 38, 0.95);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 3px solid #C71F37;
-    z-index: 1000;
-    transform: translateY(150%);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 40px;
+    border-radius: 20px;
+    border-left: 6px solid #C71F37;
+    z-index: 999; /* Lower z-index than footer */
+    transform: translateY(150%) scale(0.18); /* Adjusted initial scale */
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: float 3s ease-in-out infinite;
+    opacity: 0;
 }
 
-@keyframes float {
+/* Add styles for links inside contact info */
+.contact-info a {
+    color: #fff !important; /* Force white color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #C71F37 !important; /* Red color on hover */
+}
+
+@keyframes bubblePop {
     0% {
-        transform: translateY(0px);
+        transform: translateY(150%) scale(0.18); /* Adjusted initial scale */
+        opacity: 0;
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(0) scale(0.66); /* Adjusted intermediate scale */
+        opacity: 1;
+    }
+    70% {
+        transform: translateY(0) scale(0.54); /* Adjusted intermediate scale */
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0) scale(0.6); /* Adjusted final scale */
+        opacity: 1;
+    }
+}
+
+@keyframes bubblePopOut {
+    0% {
+        transform: translateY(0) scale(0.6); /* Adjusted initial scale */
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(0) scale(0.66); /* Adjusted intermediate scale */
+    }
+    100% {
+        transform: translateY(150%) scale(0.18); /* Adjusted final scale */
+        opacity: 0;
     }
 }
 
 .contact-info.show {
-    transform: translateY(0);
+    animation: bubblePop 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .contact-info.hide {
-    transform: translateY(150%);
-    animation: none;
+    animation: bubblePopOut 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .contact-info h3 {
     color: #C71F37;
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 36px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -948,7 +1111,7 @@ nav ul li a.active::after {
     background: none;
     border: none;
     color: #C71F37;
-    font-size: 20px;
+    font-size: 40px;
     cursor: pointer;
     padding: 0;
     transition: transform 0.3s ease;
@@ -960,26 +1123,16 @@ nav ul li a.active::after {
 
 .contact-info p {
     color: #fff;
-    font-size: 14px;
-    margin: 10px 0;
+    font-size: 28px;
+    margin: 20px 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
 }
 
 .contact-info i {
     color: #C71F37;
-    font-size: 16px;
-}
-
-.contact-info a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.contact-info a:hover {
-    color: #C71F37;
+    font-size: 32px;
 }
 
 /* Responsive adjustments */
@@ -989,6 +1142,19 @@ nav ul li a.active::after {
         right: 10px;
         bottom: 10px;
         width: auto;
+        padding: 30px;
+    }
+    
+    .contact-info h3 {
+        font-size: 28px;
+    }
+    
+    .contact-info p {
+        font-size: 20px;
+    }
+    
+    .contact-info i {
+        font-size: 24px;
     }
 }
 
@@ -1004,6 +1170,7 @@ nav ul li a.active::after {
     flex-direction: column;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     border: none; /* Hilangkan border pada container form */
+    overflow: hidden; /* Remove scrollbar */
 }
 
 .contact-form form {
@@ -1011,6 +1178,7 @@ nav ul li a.active::after {
     flex-direction: column;
     gap: 15px; /* Jarak antar field */
     height: 100%;
+    overflow: hidden; /* Remove scrollbar */
 }
 
 .contact-form input,
@@ -1119,11 +1287,18 @@ nav ul li a.active::after {
     padding: 30px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 50px;
+    position: relative;
+    z-index: 1001; /* Increased z-index to be above contact popup */
+    width: 100%;
+    clear: both;
 }
 
 .footer-content {
     text-align: center;
     color: #ababab;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .footer .copyright {
@@ -1134,6 +1309,38 @@ nav ul li a.active::after {
 .footer .address {
     font-size: 14px;
     line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Social Media Icons Styling */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    color: #ababab;
+    font-size: 36px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1;
+    padding: 5px;
+}
+
+.social-icons a:hover {
+    color: #C71F37;
+    transform: translateY(-5px);
+}
+
+.social-icons i {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
 }
 
 /* Responsive adjustments */
@@ -1149,6 +1356,15 @@ nav ul li a.active::after {
     .footer .address {
         font-size: 12px;
     }
+    
+    .social-icons {
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-icons a {
+        font-size: 30px;
+    }
 }
 
 /* Google Form Styling */
@@ -1158,6 +1374,7 @@ nav ul li a.active::after {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background: #fff;
     margin: 20px 0;
+    overflow: hidden; /* Remove scrollbar */
 }
 
 /* Hide Google Form Header */
@@ -1183,6 +1400,7 @@ nav ul li a.active::after {
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
+    overflow: hidden; /* Remove scrollbar */
 }
 
 /* Responsive Adjustments */
@@ -1253,3 +1471,655 @@ nav, nav ul {
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px);}
 .hamburger.active span:nth-child(2) { opacity: 0;}
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px);}
+
+.audio-wave {
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    position: relative;
+    opacity: 1;
+    background: transparent;
+    overflow: hidden;
+}
+
+.wave {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.wave-path {
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    opacity: 0.1; /* Set opacity to 10% */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.03)); /* Reduced shadow opacity to match */
+    transition: d 0.05s linear;
+}
+
+/* Multiple waves for dynamic effect */
+.audio-wave .wave:nth-child(1) { opacity: 0.1; }
+.audio-wave .wave:nth-child(2) { opacity: 0.08; }
+.audio-wave .wave:nth-child(3) { opacity: 0.06; }
+.audio-wave .wave:nth-child(4) { opacity: 0.04; }
+.audio-wave .wave:nth-child(5) { opacity: 0.03; }
+.audio-wave .wave:nth-child(6) { opacity: 0.02; }
+.audio-wave .wave:nth-child(7) { opacity: 0.01; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .audio-wave {
+        height: 40px;
+    }
+}
+
+/* Styling for the service popup container */
+.service-popup-container {
+    display: block; /* Ensure it takes up its own line */
+    gap: 10px; /* Space between the popup boxes */
+    background: rgba(38, 38, 38, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 100; /* Ensure it's above other content */
+    margin-top: 20px; /* Add some space above the popup */
+}
+
+/* Styling for the individual popup boxes */
+.service-popup-box {
+    display: block;
+    background: rgba(50, 50, 50, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid #C71F37;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.service-popup-box:last-child {
+    margin-bottom: 0; /* No margin after the last box */
+}
+
+.service-popup-box strong {
+    color: #C71F37;
+    font-size: 24px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.service-popup-box p {
+    color: #fff;
+    margin: 0;
+    display: inline;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.service-popup-box p span {
+    font-weight: 500;
+    display: inline-block;
+    padding-left: 0;
+    text-indent: 0;
+}
+
+/* Add styles for wrapped text */
+.service-popup-box p {
+    display: block;
+    padding-left: 2em; /* Indent text after the number */
+    text-indent: -2em; /* Pull the first line back to align with the number */
+}
+
+/* FAQ Styles */
+.faq-container {
+    max-width: 800px;
+    margin: 40px auto;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: visible; /* Changed from hidden to visible */
+}
+
+.faq-item {
+    background: rgba(38, 38, 38, 0.9);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: visible; /* Changed from hidden to visible */
+    transition: all 0.3s ease;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.faq-question h3 {
+    color: #fff;
+    font-size: 18px;
+    margin: 0;
+    flex: 1;
+}
+
+.faq-question i {
+    color: #C71F37;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.faq-answer p {
+    color: #ababab;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 0 20px 0;
+}
+
+/* Hidden FAQ styles */
+.hidden-faq {
+    display: block;
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    transform: translateY(-20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    overflow: visible; /* Changed from hidden to visible */
+}
+
+.hidden-faq.show {
+    opacity: 1;
+    height: auto;
+    margin-bottom: 20px;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Active FAQ item styles */
+.faq-item.active .faq-question {
+    background: rgba(199, 31, 55, 0.1);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: none; /* Changed from fixed height to none */
+    padding: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FAQ More Button Container */
+.faq-more-container {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.faq-more-btn,
+.faq-hide-btn {
+    background: rgba(199, 31, 55, 0.1);
+    color: #c71f37;
+    border: 2px solid #c71f37;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-more-btn:hover,
+.faq-hide-btn:hover {
+    background: #c71f37;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(199, 31, 55, 0.3);
+}
+
+.faq-more-btn.hide,
+.faq-hide-btn.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .faq-more-btn,
+    .faq-hide-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Radar Circles Styling */
+.svg-circles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.radar-circle {
+    position: absolute;
+    transform-origin: center center;
+    opacity: 0.3;
+}
+
+/* Hide radar circles on screens smaller than 1440px */
+@media (max-width: 1439px) {
+    .svg-circles {
+        display: none;
+    }
+}
+
+/* Header Section Circles */
+.header-circles .radar-circle:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    transform: scale(0.8);
+}
+
+.header-circles .radar-circle:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    transform: scale(0.6);
+}
+
+/* About Section Circles */
+.about-circles .radar-circle:nth-child(1) {
+    top: 30%;
+    right: 5%;
+    transform: scale(0.7);
+}
+
+.about-circles .radar-circle:nth-child(2) {
+    bottom: 20%;
+    left: 8%;
+    transform: scale(0.9);
+}
+
+/* Services Section Circles */
+.services-circles .radar-circle:nth-child(1) {
+    top: 15%;
+    left: 12%;
+    transform: scale(0.8);
+}
+
+.services-circles .radar-circle:nth-child(2) {
+    bottom: 25%;
+    right: 10%;
+    transform: scale(0.7);
+}
+
+/* FAQ Section Circles */
+.faq-circles .radar-circle:nth-child(1) {
+    top: 40%;
+    left: 5%;
+    transform: scale(0.6);
+}
+
+.faq-circles .radar-circle:nth-child(2) {
+    bottom: 30%;
+    right: 8%;
+    transform: scale(0.8);
+}
+
+/* Contact Section Circles */
+.contact-circles .radar-circle:nth-child(1) {
+    top: 25%;
+    right: 12%;
+    transform: scale(0.7);
+}
+
+.contact-circles .radar-circle:nth-child(2) {
+    bottom: 15%;
+    left: 10%;
+    transform: scale(0.9);
+}
+
+/* Ensure sections have proper positioning for absolute elements */
+#header, #about, #services, #faq, #contact {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adjust container z-index to ensure content stays above circles */
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive container padding */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px 5%;
+    }
+}
+
+/* Ensure nav and container alignment */
+nav {
+    padding: 10px 10%;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 5%;
+    }
+}
+
+/* Responsive adjustments for small mobile devices */
+@media (max-width: 430px) {
+    /* Center all content containers */
+    .container {
+        max-width: 430px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    /* Center header text */
+    .header-text {
+        text-align: center;
+        margin-top: 50%;
+        padding: 0 15px;
+    }
+
+    .header-text h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .header-text p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Center about section content */
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .sub-title {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    /* Center services content */
+    .services-list {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .services-list div {
+        padding: 30px 20px;
+    }
+
+    /* Center portfolio content */
+    .work-list {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Center FAQ content */
+    .faq-container {
+        max-width: 430px;
+        margin: 20px auto;
+    }
+
+    .faq-question h3 {
+        text-align: center;
+    }
+
+    /* Center contact content */
+    .booking-guide {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .guide-steps,
+    .custom-service {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+        max-width: 430px;
+        margin: 20px auto;
+    }
+
+    /* Center footer content */
+    .footer-content {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Center navigation */
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    /* Center buttons */
+    .btn,
+    .contact-btn,
+    .faq-more-btn,
+    .faq-hide-btn {
+        margin: 20px auto;
+        display: block;
+        width: fit-content;
+    }
+}
+
+/* Center alignment for screens below 1040px */
+@media (max-width: 1040px) {
+    /* Keep logo aligned to the left */
+    nav {
+        justify-content: flex-start;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        margin-right: auto;
+        text-align: left;
+    }
+
+    /* Center all other containers */
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    /* Rest of the existing center alignment styles */
+    .header-text {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .header-text h1 {
+        text-align: center;
+    }
+
+    .header-text p {
+        text-align: center;
+    }
+
+    /* Center about section */
+    .row {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .sub-title {
+        text-align: center;
+    }
+
+    /* Center services section */
+    .services-list {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .services-list div {
+        text-align: center;
+    }
+
+    /* Center portfolio section */
+    .work-list {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+
+    /* Center FAQ section */
+    .faq-container {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .faq-question h3 {
+        text-align: center;
+    }
+
+    /* Center contact section */
+    .booking-guide {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .guide-steps,
+    .custom-service {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-form {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    /* Center footer */
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    /* Center navigation */
+    nav {
+        justify-content: center;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    /* Center all buttons */
+    .btn,
+    .contact-btn,
+    .faq-more-btn,
+    .faq-hide-btn {
+        margin: 20px auto;
+        display: block;
+        width: fit-content;
+    }
+
+    /* Center tab titles */
+    .tab-titles {
+        justify-content: center;
+    }
+
+    /* Center tab contents */
+    .tab-contents {
+        text-align: center;
+    }
+
+    .tab-contents ul li {
+        text-align: center;
+    }
+
+    /* Center service popup */
+    .service-popup-container {
+        text-align: center;
+    }
+
+    .service-popup-box {
+        text-align: center;
+    }
+
+    /* Center contact info */
+    .contact-info {
+        text-align: center;
+    }
+
+    /* Center form elements */
+    .contact-form input,
+    .contact-form select {
+        text-align: center;
+    }
+}
