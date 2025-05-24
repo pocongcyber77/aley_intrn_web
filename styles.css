@@ -2165,120 +2165,120 @@ nav {
 /* Responsive adjustments for mobile and tablet */
 @media (max-width: 1024px) {
     .container {
-        padding: 20px 25px;  /* Increased padding for better spacing */
+        padding: 40px 50px;  /* Doubled padding */
         margin: 0 auto;
         max-width: 100%;
     }
 
     /* Header text spacing */
     .header-text {
-        margin-top: 120%;
-        padding: 0 20px;
+        margin-top: 140%;  /* Increased margin */
+        padding: 0 40px;   /* Doubled padding */
     }
 
     /* About section spacing */
     .about-col-1,
     .about-col-2 {
-        padding: 20px;
-        margin-bottom: 30px;
+        padding: 40px;     /* Doubled padding */
+        margin-bottom: 60px; /* Doubled margin */
     }
 
     /* Services section spacing */
     .services-list {
-        gap: 30px;
-        padding: 20px 0;
+        gap: 60px;         /* Doubled gap */
+        padding: 40px 0;   /* Doubled padding */
     }
 
     .services-list div {
-        margin: 10px;
-        padding: 30px 25px;
+        margin: 20px;      /* Doubled margin */
+        padding: 60px 50px; /* Doubled padding */
     }
 
     /* Portfolio section spacing */
     .work-list {
-        gap: 30px;
-        padding: 20px 0;
+        gap: 60px;         /* Doubled gap */
+        padding: 40px 0;   /* Doubled padding */
     }
 
     .work {
-        margin: 10px;
+        margin: 20px;      /* Doubled margin */
     }
 
     /* FAQ section spacing */
     .faq-container {
-        padding: 0 20px;
-        margin: 30px auto;
+        padding: 0 40px;   /* Doubled padding */
+        margin: 60px auto; /* Doubled margin */
     }
 
     .faq-item {
-        margin: 15px 0;
+        margin: 30px 0;    /* Doubled margin */
     }
 
     /* Contact section spacing */
     .booking-guide {
-        padding: 20px;
-        gap: 25px;
+        padding: 40px;     /* Doubled padding */
+        gap: 50px;         /* Doubled gap */
     }
 
     .guide-steps,
     .custom-service {
-        padding: 25px;
-        margin: 15px 0;
+        padding: 50px;     /* Doubled padding */
+        margin: 30px 0;    /* Doubled margin */
     }
 
     .contact-form {
-        padding: 25px;
-        margin: 20px auto;
+        padding: 50px;     /* Doubled padding */
+        margin: 40px auto; /* Doubled margin */
     }
 
     /* Footer spacing */
     .footer {
-        padding: 30px 20px;
+        padding: 60px 40px; /* Doubled padding */
     }
 
     .footer-content {
-        padding: 0 20px;
+        padding: 0 40px;   /* Doubled padding */
     }
 }
 
 /* Additional adjustments for smaller mobile devices */
 @media (max-width: 480px) {
     .container {
-        padding: 15px 20px;  /* Slightly reduced padding for very small screens */
+        padding: 30px 40px;  /* Doubled padding */
     }
 
     .header-text {
-        margin-top: 130%;
-        padding: 0 15px;
+        margin-top: 150%;    /* Increased margin */
+        padding: 0 30px;     /* Doubled padding */
     }
 
     .about-col-1,
     .about-col-2 {
-        padding: 15px;
+        padding: 30px;       /* Doubled padding */
     }
 
     .services-list div {
-        padding: 25px 20px;
+        padding: 50px 40px;  /* Doubled padding */
     }
 
     .work {
-        margin: 8px;
+        margin: 16px;        /* Doubled margin */
     }
 
     .faq-container {
-        padding: 0 15px;
+        padding: 0 30px;     /* Doubled padding */
     }
 
     .booking-guide {
-        padding: 15px;
+        padding: 30px;       /* Doubled padding */
     }
 
     .guide-steps,
     .custom-service {
-        padding: 20px;
+        padding: 40px;       /* Doubled padding */
     }
 
     .contact-form {
-        padding: 20px;
+        padding: 40px;       /* Doubled padding */
     }
 }
