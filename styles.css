@@ -2165,120 +2165,120 @@ nav {
 /* Responsive adjustments for mobile and tablet */
 @media (max-width: 1024px) {
     .container {
-        padding: 40px 50px;  /* Doubled padding */
+        padding: 60px 75px;  /* 1.5x current padding */
         margin: 0 auto;
         max-width: 100%;
     }
 
     /* Header text spacing */
     .header-text {
-        margin-top: 140%;  /* Increased margin */
-        padding: 0 40px;   /* Doubled padding */
+        margin-top: 160%;  /* Increased margin */
+        padding: 0 60px;   /* 1.5x current padding */
     }
 
     /* About section spacing */
     .about-col-1,
     .about-col-2 {
-        padding: 40px;     /* Doubled padding */
-        margin-bottom: 60px; /* Doubled margin */
+        padding: 60px;     /* 1.5x current padding */
+        margin-bottom: 90px; /* 1.5x current margin */
     }
 
     /* Services section spacing */
     .services-list {
-        gap: 60px;         /* Doubled gap */
-        padding: 40px 0;   /* Doubled padding */
+        gap: 90px;         /* 1.5x current gap */
+        padding: 60px 0;   /* 1.5x current padding */
     }
 
     .services-list div {
-        margin: 20px;      /* Doubled margin */
-        padding: 60px 50px; /* Doubled padding */
+        margin: 30px;      /* 1.5x current margin */
+        padding: 90px 75px; /* 1.5x current padding */
     }
 
     /* Portfolio section spacing */
     .work-list {
-        gap: 60px;         /* Doubled gap */
-        padding: 40px 0;   /* Doubled padding */
+        gap: 90px;         /* 1.5x current gap */
+        padding: 60px 0;   /* 1.5x current padding */
     }
 
     .work {
-        margin: 20px;      /* Doubled margin */
+        margin: 30px;      /* 1.5x current margin */
     }
 
     /* FAQ section spacing */
     .faq-container {
-        padding: 0 40px;   /* Doubled padding */
-        margin: 60px auto; /* Doubled margin */
+        padding: 0 60px;   /* 1.5x current padding */
+        margin: 90px auto; /* 1.5x current margin */
     }
 
     .faq-item {
-        margin: 30px 0;    /* Doubled margin */
+        margin: 45px 0;    /* 1.5x current margin */
     }
 
     /* Contact section spacing */
     .booking-guide {
-        padding: 40px;     /* Doubled padding */
-        gap: 50px;         /* Doubled gap */
+        padding: 60px;     /* 1.5x current padding */
+        gap: 75px;         /* 1.5x current gap */
     }
 
     .guide-steps,
     .custom-service {
-        padding: 50px;     /* Doubled padding */
-        margin: 30px 0;    /* Doubled margin */
+        padding: 75px;     /* 1.5x current padding */
+        margin: 45px 0;    /* 1.5x current margin */
     }
 
     .contact-form {
-        padding: 50px;     /* Doubled padding */
-        margin: 40px auto; /* Doubled margin */
+        padding: 75px;     /* 1.5x current padding */
+        margin: 60px auto; /* 1.5x current margin */
     }
 
     /* Footer spacing */
     .footer {
-        padding: 60px 40px; /* Doubled padding */
+        padding: 90px 60px; /* 1.5x current padding */
     }
 
     .footer-content {
-        padding: 0 40px;   /* Doubled padding */
+        padding: 0 60px;   /* 1.5x current padding */
     }
 }
 
 /* Additional adjustments for smaller mobile devices */
 @media (max-width: 480px) {
     .container {
-        padding: 30px 40px;  /* Doubled padding */
+        padding: 45px 60px;  /* 1.5x current padding */
     }
 
     .header-text {
-        margin-top: 150%;    /* Increased margin */
-        padding: 0 30px;     /* Doubled padding */
+        margin-top: 170%;    /* Increased margin */
+        padding: 0 45px;     /* 1.5x current padding */
     }
 
     .about-col-1,
     .about-col-2 {
-        padding: 30px;       /* Doubled padding */
+        padding: 45px;       /* 1.5x current padding */
     }
 
     .services-list div {
-        padding: 50px 40px;  /* Doubled padding */
+        padding: 75px 60px;  /* 1.5x current padding */
     }
 
     .work {
-        margin: 16px;        /* Doubled margin */
+        margin: 24px;        /* 1.5x current margin */
     }
 
     .faq-container {
-        padding: 0 30px;     /* Doubled padding */
+        padding: 0 45px;     /* 1.5x current padding */
     }
 
     .booking-guide {
-        padding: 30px;       /* Doubled padding */
+        padding: 45px;       /* 1.5x current padding */
     }
 
     .guide-steps,
     .custom-service {
-        padding: 40px;       /* Doubled padding */
+        padding: 60px;       /* 1.5x current padding */
     }
 
     .contact-form {
-        padding: 40px;       /* Doubled padding */
+        padding: 60px;       /* 1.5x current padding */
     }
 }
