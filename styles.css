@@ -2127,66 +2127,66 @@ nav {
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
     .container {
-        padding: 0 120px;
-        margin: 0 160px;
+        padding: 0 240px;
+        margin: 0 320px;
     }
 
     .hero {
         padding: 120px 0;
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .hero-content {
         max-width: 600px;
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .section {
-        padding: 80px 120px;
-        margin: 0 120px;
+        padding: 80px 240px;
+        margin: 0 240px;
     }
 
     .card {
-        margin: 20px 120px;
+        margin: 20px 240px;
     }
 
     .contact-form {
         max-width: 600px;
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .footer-content {
-        padding: 0 120px;
-        margin: 0 120px;
+        padding: 0 240px;
+        margin: 0 240px;
     }
 
     .footer-bottom {
-        padding: 20px 120px;
-        margin: 0 120px;
+        padding: 20px 240px;
+        margin: 0 240px;
     }
 
     /* Additional elements that need wider margins */
     .services-list {
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .work-list {
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .faq-container {
-        margin: 40px 120px;
+        margin: 40px 240px;
     }
 
     .booking-guide {
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .guide-steps {
-        margin: 0 120px;
+        margin: 0 240px;
     }
 
     .custom-service {
-        margin: 0 120px;
+        margin: 0 240px;
     }
 }
