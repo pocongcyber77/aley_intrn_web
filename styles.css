@@ -97,11 +97,11 @@ nav{
     color: #fff;
     z-index: 1001;
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
-    padding: 10px;
+    padding: 5px;
     transition: 0.3s;
 }
 
@@ -113,10 +113,13 @@ nav{
 @media (max-width: 768px) {
     .menu-btn {
         display: block;
+        top: 10px;
+        right: 10px;
+        padding: 5px;
     }
 
     nav {
-        padding: 10px 20px;
+        padding: 5px 20px;
     }
 
     nav ul {
@@ -126,7 +129,7 @@ nav{
         width: 250px;
         height: 100vh;
         background: rgba(8, 8, 8, 0.95); /* Sedikit transparan tapi tidak blur */
-        padding-top: 80px;
+        padding-top: 40px;
         transition: 0.5s;
         flex-direction: column;
         align-items: center;
@@ -142,15 +145,15 @@ nav{
 
     nav ul li {
         display: block;
-        margin: 25px 0;
+        margin: 12px 0;
         width: 100%;
         text-align: center;
     }
 
     nav ul li a {
-        font-size: 18px;
+        font-size: 16px;
         display: block;
-        padding: 10px 0;
+        padding: 5px 0;
     }
 
     /* Overlay when menu is open */
@@ -168,6 +171,11 @@ nav{
 
     .nav-overlay.active {
         display: block;
+    }
+
+    .logo {
+        width: 70px;
+        height: auto;
     }
 }
 
@@ -1835,13 +1843,13 @@ nav {
 
 @media (max-width: 768px) {
     nav {
-        padding: 10px 5%;
+        padding: 5px 20px;
     }
 }
 
 @media (max-width: 480px) {
     nav {
-        padding: 10px 5%;
+        padding: 5px 20px;
     }
 }
 
@@ -1957,7 +1965,7 @@ nav {
 
     /* Center navigation */
     nav {
-        padding: 10px 20px;
+        padding: 5px 20px;
     }
 
     nav ul {
@@ -2169,7 +2177,7 @@ nav {
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
     .container {
-        padding: 0 300px;
+        padding: 5px 10%;
         margin: 0 300px;
     }
 
@@ -2231,6 +2239,19 @@ nav {
     .custom-service {
         margin: 0 300px;
     }
+
+    .logo {
+        width: 70px;
+        height: auto;
+    }
+
+    nav ul li {
+        margin: 2px 30px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
 }
 
 /* Hide audio wave on mobile and tablet */
@@ -2256,5 +2277,23 @@ nav {
     .svg-circles,
     .radar-circle {
         display: none !important;
+    }
+
+    nav {
+        padding: 5px 20px;
+    }
+
+    .logo {
+        width: 60px;
+        height: auto;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 4px 0;
     }
 }
