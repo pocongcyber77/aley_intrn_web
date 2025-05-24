@@ -2235,116 +2235,139 @@ nav {
 
 /* Completely remove all wave and radar elements on mobile and tablet */
 @media (max-width: 1023px) {
-    /* Remove audio wave elements */
-    .audio-wave,
-    .wave,
-    .wave-path,
-    .audio-wave *,
-    .wave *,
-    .wave-path * {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        overflow: hidden !important;
-        clip: rect(0 0 0 0) !important;
-        margin: -1px !important;
-        padding: 0 !important;
-        border: 0 !important;
-        transform: scale(0) !important;
-        pointer-events: none !important;
-        z-index: -9999 !important;
-    }
-
-    /* Remove radar and circle elements */
-    .svg-circles,
-    .radar-circle,
-    .header-circles,
-    .about-circles,
-    .services-circles,
-    .faq-circles,
-    .contact-circles,
-    .svg-circles *,
-    .radar-circle *,
-    .header-circles *,
-    .about-circles *,
-    .services-circles *,
-    .faq-circles *,
-    .contact-circles * {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        overflow: hidden !important;
-        clip: rect(0 0 0 0) !important;
-        margin: -1px !important;
-        padding: 0 !important;
-        border: 0 !important;
-        transform: scale(0) !important;
-        pointer-events: none !important;
-        z-index: -9999 !important;
-    }
-
     /* Disable all animations and transitions */
-    .audio-wave *,
-    .wave *,
-    .wave-path *,
-    .svg-circles *,
-    .radar-circle *,
-    .header-circles *,
-    .about-circles *,
-    .services-circles *,
-    .faq-circles *,
-    .contact-circles * {
+    * {
         animation: none !important;
         transition: none !important;
         transform: none !important;
     }
+
+    /* Optimize header */
+    #header {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        transform: none !important;
+    }
+
+    /* Optimize sections */
+    .section {
+        transform: none !important;
+        will-change: auto !important;
+    }
+
+    /* Optimize cards and lists */
+    .services-list div,
+    .work,
+    .card,
+    .faq-item,
+    .contact-form {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        will-change: auto !important;
+    }
+
+    /* Optimize text animations */
+    .header-text h1,
+    .header-text p,
+    .sub-title,
+    .tab-links,
+    .tab-contents,
+    .about-col-2 p {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* Optimize hover effects */
+    .services-list div:hover,
+    .work:hover,
+    .card:hover,
+    .btn:hover,
+    .contact-btn:hover,
+    .faq-more-btn:hover,
+    .faq-hide-btn:hover {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Optimize images */
+    img {
+        will-change: auto !important;
+        transform: none !important;
+    }
+
+    /* Remove unnecessary effects */
+    .layer {
+        transition: none !important;
+    }
+
+    .work:hover img {
+        transform: none !important;
+    }
+
+    .work:hover .layer {
+        transition: none !important;
+    }
+
+    /* Optimize form elements */
+    .contact-form input,
+    .contact-form select,
+    .contact-form button {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    /* Optimize navigation */
+    nav {
+        transition: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    nav ul li a::after {
+        transition: none !important;
+    }
+
+    /* Optimize footer */
+    .footer {
+        transition: none !important;
+    }
+
+    .social-icons a {
+        transition: none !important;
+    }
+
+    .social-icons a:hover {
+        transform: none !important;
+    }
 }
 
-/* Additional mobile-specific adjustments */
+/* Additional mobile-specific optimizations */
 @media (max-width: 430px) {
-    /* Force remove all wave and circle elements on mobile */
-    .audio-wave,
-    .wave,
-    .wave-path,
-    .svg-circles,
-    .radar-circle,
-    .header-circles,
-    .about-circles,
-    .services-circles,
-    .faq-circles,
-    .contact-circles,
-    .audio-wave *,
-    .wave *,
-    .wave-path *,
-    .svg-circles *,
-    .radar-circle *,
-    .header-circles *,
-    .about-circles *,
-    .services-circles *,
-    .faq-circles *,
-    .contact-circles * {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
-        width: 0 !important;
-        height: 0 !important;
-        position: absolute !important;
-        overflow: hidden !important;
-        clip: rect(0 0 0 0) !important;
-        margin: -1px !important;
-        padding: 0 !important;
-        border: 0 !important;
-        transform: scale(0) !important;
-        pointer-events: none !important;
-        z-index: -9999 !important;
+    /* Further reduce animations and transitions */
+    * {
         animation: none !important;
         transition: none !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+
+    /* Optimize scrolling */
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    /* Optimize images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Optimize containers */
+    .container {
+        transform: none !important;
+        will-change: auto !important;
     }
 }
 
