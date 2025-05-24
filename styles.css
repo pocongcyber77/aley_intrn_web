@@ -112,22 +112,24 @@ nav{
 @media (max-width: 768px) {
     nav {
         display: flex;
-        align-items: center;
+        align-items: flex-start; /* Changed from center to flex-start */
         justify-content: space-between;
         padding: 5px 20px;
     }
 
     .menu-btn {
         display: block;
-        position: relative; /* Changed from fixed */
-        top: auto; /* Remove fixed positioning */
-        right: auto; /* Remove fixed positioning */
+        position: relative;
+        top: -5px; /* Move up by 5px */
+        right: auto;
         padding: 5px;
+        margin-top: 5px; /* Add some top margin */
     }
 
     .logo {
         width: 70px;
         height: auto;
+        margin-top: 5px; /* Add some top margin to align with menu */
     }
 
     nav ul {
@@ -211,10 +213,13 @@ nav{
 
     .menu-btn {
         padding: 4px;
+        top: -8px; /* Move up even more for smaller screens */
+        margin-top: 8px;
     }
 
     .logo {
         width: 60px;
+        margin-top: 8px; /* Match menu button margin */
     }
 }
 
