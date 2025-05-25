@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sudio Recording Surabaya">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Your site description">
     <title>Aley Record Studio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -29,8 +28,8 @@
                 </ul>
             </nav>
             <div class="header-text">
-                <h1>Where Sound <span>Breathes!</span></h1>
-                </div>
+                <h1 id="header-title">Where Sound <span>Breathes!</span></h1>
+                <blockquote class="header-quote" id="header-quote"></blockquote>
             </div>
         </div>
     </div>
@@ -888,6 +887,83 @@
         .finally(() => {
             submitButton.textContent = originalText;
             submitButton.disabled = false;
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const h1Text1 = 'Where Sound ';
+        const h1Text2 = 'Breathes!';
+        const quote = "Setiap lagu punya cerita. Kami di sini bukan hanya untuk mendengar, tapi untuk merasakan, memahami, dan menghidupkannya bersama anda";
+        const h1Elem = document.getElementById('header-title');
+        const quoteElem = document.getElementById('header-quote');
+        let typingTimeout, loopTimeout, popTimeout;
+
+        function typeWriterDual(h1Str1, h1Str2, quoteStr, h1Target, quoteTarget, i = 0, j = 0, k = 0) {
+            if (i === 0 && j === 0 && k === 0) {
+                h1Target.innerHTML = '';
+                h1Target.append(document.createTextNode(''));
+                h1Target.append(document.createElement('span'));
+                quoteTarget.innerHTML = '';
+            }
+            let h1Done = false, h1SpanDone = false, quoteDone = false;
+
+            // Type h1 before span
+            if (i < h1Str1.length) {
+                h1Target.childNodes[0].textContent += h1Str1.charAt(i);
+                i++;
+            } else {
+                h1Done = true;
+            }
+
+            // Type h1 inside span
+            if (h1Done && j < h1Str2.length) {
+                h1Target.querySelector('span').textContent += h1Str2.charAt(j);
+                j++;
+            } else if (h1Done) {
+                h1SpanDone = true;
+            }
+
+            // Type quote
+            if (k < quoteStr.length) {
+                quoteTarget.innerHTML += quoteStr.charAt(k);
+                k++;
+            } else {
+                quoteDone = true;
+            }
+
+            if (!h1SpanDone || !quoteDone) {
+                typingTimeout = setTimeout(() => typeWriterDual(h1Str1, h1Str2, quoteStr, h1Target, quoteTarget, i, j, k), 55);
+            }
+        }
+
+        function showHeader() {
+            h1Elem.classList.remove('pop-out');
+            quoteElem.classList.remove('pop-out');
+            h1Elem.innerHTML = '';
+            h1Elem.append(document.createTextNode('Where Sound '));
+            h1Elem.append(document.createElement('span'));
+            quoteElem.innerHTML = '';
+            typeWriterDual(h1Text1, h1Text2, quote, h1Elem, quoteElem);
+            // Setelah typing selesai + 7 detik, pop out
+            const typingDuration = Math.max(h1Text1.length + h1Text2.length, quote.length) * 55;
+            loopTimeout = setTimeout(hideHeader, typingDuration + 7000);
+        }
+
+        function hideHeader() {
+            h1Elem.classList.add('pop-out');
+            quoteElem.classList.add('pop-out');
+            // Setelah pop out selesai, ulangi showHeader
+            popTimeout = setTimeout(showHeader, 600);
+        }
+
+        // Inisialisasi
+        showHeader();
+
+        // Optional: Bersihkan timeout jika user pindah halaman
+        window.addEventListener('beforeunload', () => {
+            clearTimeout(typingTimeout);
+            clearTimeout(loopTimeout);
+            clearTimeout(popTimeout);
         });
     });
 </script>

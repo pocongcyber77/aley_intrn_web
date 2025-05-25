@@ -89,6 +89,76 @@ nav{
     -webkit-backdrop-filter: none;
 }
 
+.header-text {
+    margin-top: 40%;
+    font-size: 30px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    padding-left: 0;
+    text-align: center; /* Agar h1 dan quote selalu center secara container */
+}
+
+.header-text h1 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 50px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    text-shadow:
+      0 0 24px rgba(199, 31, 55, 0.3),   /* Red glow, 70% opacity */
+      0 0 64px rgba(199, 31, 55, 0.2),   /* Red glow, 40% opacity */
+      0 0 16px rgba(255,255,255,0.2);     /* White glow, 50% opacity */
+}
+
+.header-text h1 span{ 
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+#header-title span {
+    color: #C71F37;
+    font-weight: 700;
+  }
+
+.header-quote {
+    display: inline-block;
+    max-width: 540px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #ffffff;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.7;
+    letter-spacing: 0.1px;
+    padding: 0 24px;
+    box-sizing: border-box;
+    opacity: 1;
+    animation: none;
+    vertical-align: top;
+    text-shadow:
+      0 0 10px rgba(255,255,255,0.4),    /* White glow, 60% opacity */
+      0 0 24px rgba(199, 31, 55, 0.2),   /* Red glow, 30% opacity */
+      0 0 6px rgba(255,255,255,0.3);     /* White glow, 40% opacity */
+}
+
+/* Mobile & Tablet: center align, font lebih kecil, padding lebih kecil */
+@media (max-width: 1023px) {
+    .header-quote {
+        font-size: 16px;
+        padding: 0 10px;
+        max-width: 95vw;
+    }
+    .header-text h1 {
+        font-size: 32px;
+    }
+}
+
 /* Mobile menu button */
 .menu-btn {
     display: none;
@@ -112,59 +182,79 @@ nav{
 @media (max-width: 768px) {
     nav {
         display: flex;
-        align-items: flex-start; /* Changed from center to flex-start */
+        align-items: center;
         justify-content: space-between;
-        padding: 5px 20px;
+        padding: 0 40px;
+        background: rgba(8, 8, 8, 0.98);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
     .menu-btn {
         display: block;
         position: relative;
-        top: -5px; /* Move up by 5px */
-        right: auto;
-        padding: 5px;
-        margin-top: 5px; /* Add some top margin */
+        top: 0;
+        right: 0;
+        padding: 8px;
+        margin: 0;
+        font-size: 28px;
     }
 
     .logo {
-        width: 70px;
+        width: 80px;
         height: auto;
-        margin-top: 5px; /* Add some top margin to align with menu */
+        margin: 0;
     }
 
     nav ul {
         position: fixed;
         top: 0;
-        right: -250px;
-        width: 250px;
+        right: -300px;
+        width: 150px;
         height: 100vh;
-        background: rgba(8, 8, 8, 0.95);
-        padding-top: 40px;
-        transition: 0.5s;
+        background: rgba(8, 8, 8, 0.98);
+        display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         z-index: 1000;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+        box-shadow: -2px 0 20px rgba(0, 0, 0, 0.4);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    nav ul.active {
-        right: 0;
-    }
+    nav ul.active { right: 0; }
 
     nav ul li {
         display: block;
-        margin: 12px 0;
+        margin: 20px 0;
         width: 100%;
         text-align: center;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s ease;
     }
-
+    nav ul.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    nav ul li:nth-child(1) { transition-delay: 0.1s; }
+    nav ul li:nth-child(2) { transition-delay: 0.2s; }
+    nav ul li:nth-child(3) { transition-delay: 0.3s; }
+    nav ul li:nth-child(4) { transition-delay: 0.4s; }
+    nav ul li:nth-child(5) { transition-delay: 0.5s; }
     nav ul li a {
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: 500;
         display: block;
-        padding: 5px 0;
+        padding: 10px 0;
+        color: #fff;
+        transition: all 0.3s ease;
     }
-
-   
+    nav ul li a:hover {
+        color: #C71F37;
+        transform: scale(1.05);
+    }
+    nav ul li a.active {
+        color: #C71F37;
+    }
 }
 
 /* Tablet */
@@ -188,23 +278,75 @@ nav{
         width: 70px;
         height: auto;
     }
+
+    nav ul {
+        width: 150px;
+    }
 }
 
 /* Additional mobile-specific adjustments */
 @media (max-width: 430px) {
     nav {
-        padding: 5px 20px;
+        padding: 12px 15px;
     }
 
     .menu-btn {
-        padding: 4px;
-        top: -8px; /* Move up even more for smaller screens */
-        margin-top: 8px;
+        padding: 6px;
+        font-size: 24px;
     }
 
     .logo {
-        width: 60px;
-        margin-top: 8px; /* Match menu button margin */
+        width: 70px;
+    }
+
+    nav ul {
+        width: 140px;
+        padding: 70px 0 30px 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        padding: 8px 0;
+    }
+
+    .tab-titles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0 40px 0;
+        width: 100%;
+    }
+    .tab-links {
+        margin: 0 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .about-col-2 {
+        padding-left: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .tab-titles {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 20px 0 40px 0 !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+    }
+    .tab-links {
+        margin: 0 5px !important;
+        font-size: 18px !important;
+        text-align: center !important;
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
     }
 }
 
@@ -259,31 +401,6 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-.header-text {
-    margin-top: 40%;
-    font-size: 30px;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0;
-    padding-left: 0;
-}
-
-.header-text h1 {
-    margin-top: 1%;
-    margin-bottom: 10px; 
-    font-size: 50px;
-    line-height: 1.2;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease forwards;
-    animation-delay: 0.4s;
-    letter-spacing: 0.5px;
-}
-
-.header-text h1 span{ 
-    color: #C71F37;
-    font-weight: 700;
-    letter-spacing: 1px;
-}   
 
 /* Enhanced Responsive header text positioning */
 @media (max-width: 1920px) {
@@ -1486,17 +1603,51 @@ nav ul li a.active::after {
         position: fixed;
         top: 0;
         right: -300px;
-        width: 300px;
+        width: 150px;
         height: 100vh;
         background: rgba(8, 8, 8, 0.98);
-        padding-top: 80px;
-        transition: right 0.5s;
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
         z-index: 1000;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+        box-shadow: -2px 0 20px rgba(0, 0, 0, 0.4);
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     nav ul.active { right: 0; }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s ease;
+    }
+    nav ul.active li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    nav ul li:nth-child(1) { transition-delay: 0.1s; }
+    nav ul li:nth-child(2) { transition-delay: 0.2s; }
+    nav ul li:nth-child(3) { transition-delay: 0.3s; }
+    nav ul li:nth-child(4) { transition-delay: 0.4s; }
+    nav ul li:nth-child(5) { transition-delay: 0.5s; }
+    nav ul li a {
+        font-size: 20px;
+        font-weight: 500;
+        display: block;
+        padding: 10px 0;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+        color: #C71F37;
+        transform: scale(1.05);
+    }
+    nav ul li a.active {
+        color: #C71F37;
+    }
 }
 
 /* Reset backdrop filters */
@@ -1855,7 +2006,10 @@ nav, nav ul {
 /* Responsive container padding */
 @media (max-width: 768px) {
     .container {
-        padding: 10px 5%;
+        padding: 10px 10px !important;
+        margin: 0 auto !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
     }
 }
 
@@ -1918,7 +2072,7 @@ nav {
         flex-basis: 100%;
         text-align: center;
         padding: 0 20px;
-        margin: 0 20px;
+        margin: 0 10px;
     }
 
     .sub-title {
@@ -1943,7 +2097,7 @@ nav {
     .work-list {
         grid-template-columns: 1fr;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 50px;
     }
 
     /* Center FAQ content */
@@ -1963,7 +2117,7 @@ nav {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin: 0 20px;
+        margin: 0 75px;
     }
 
     .guide-steps,
@@ -1984,7 +2138,7 @@ nav {
     .footer-content {
         text-align: center;
         padding: 0 20px;
-        margin: 0 20px;
+        margin: 0 1px;
     }
 
     .social-icons {
@@ -2326,3 +2480,275 @@ nav {
         padding: 4px 0;
     }
 }
+
+@media (max-width: 1023px) {
+  #about, #services, #portfolio, #contact, #faq {
+    margin-top: 0 !important;
+    padding-top: 60px !important;
+  }
+  .about-col-1, .about-col-2 {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  .tab-titles {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 20px 0 40px 0 !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+  .tab-links {
+    margin: 0 5px !important;
+    font-size: 18px !important;
+    text-align: center !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+  .work-list {
+    margin: 0 10px !important;
+  }
+  .faq-container, .contact-form, .footer-content, .services-list, .booking-guide, .guide-steps, .custom-service {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 430px) {
+  /* Container utama */
+  .container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* Center seluruh konten utama */
+  }
+
+ /* Header text */
+ .header-text {
+    margin: 350px auto 20px auto !important; /* Atas 30px, bawah 20px, kiri-kanan auto */
+    text-align: center !important;
+    /* Center judul header */
+  }
+
+  /* Judul section (Tentang Kami, Layanan, dst) */
+  .sub-title {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    /* Center judul section */
+  }
+
+  /* Tab judul (Fokus, Standar, Komitmen) */
+  .tab-titles {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    /* Center tab judul */
+  }
+
+  /* Setiap tab link */
+  .tab-links {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    /* Center setiap tab */
+  }
+
+  /* Konten About */
+  .about-col-1,
+  .about-col-2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    /* Center kolom About */
+  }
+
+  /* Daftar layanan */
+  .services-list {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* Center grid layanan */
+  }
+
+  /* Portofolio */
+  .work-list {
+    margin-left: 48px !important;
+    margin-right: 48px !important;
+    /* Center grid portofolio */
+  }
+
+  /* FAQ */
+  .faq-container {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    /* Center FAQ */
+  }
+
+  .booking-guide,
+.contact-form,
+.custom-service {
+  margin: auto !important;           /* Center horizontal */
+  padding-left: 48px !important;     /* Space kiri */
+  padding-right: 48px !important;    /* Space kanan */
+  /* Atau lebih singkat: padding: 0 24px !important; */
+  width: auto !important;
+  max-width: 95vw !important;
+  box-sizing: border-box !important;
+}
+}
+
+
+
+  /* Footer */
+  .footer-content {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    /* Center konten footer */
+  }
+
+
+@media (max-width: 1023px) {
+  /* Halaman Tentang Kami kusus HP da tablet*/ 
+  #about,
+  #about p,
+  #about .tab-titles,
+  #about .tab-links,
+  #about .tab-contents,
+  #about .tab-contents ul li,
+  #about .about-col-1,
+  #about .about-col-2 {
+    font-size: 95% !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  #about .tab-contents ul {
+    padding-left: 0 !important;
+    margin-right: 55px !important;
+    list-style: none !important; /* Hilangkan bullet/number */
+    text-align: center !important;
+    display: block !important;
+  }
+}
+
+/* Service Popup mobile size */
+@media (max-width: 1023px) {
+  .service-popup-box {
+    font-size: 16px !important;    /* Base font size for tablet */
+    padding: 15px !important;      /* Reduced padding for better space usage */
+  }
+  
+  .service-popup-box strong {
+    font-size: 20px !important;    /* Larger font for titles to maintain hierarchy */
+  }
+  
+  .service-popup-box p {
+    font-size: 14px !important;    /* Smaller font for content */
+    line-height: 1.1 !important;   /* Tighter line spacing for compact layout */
+  }
+}
+
+@media (max-width: 768px) {
+  .service-popup-box {
+    font-size: 12px !important;    /* Even smaller base font for mobile */
+    padding: 12px !important;      /* Minimal padding for small screens */
+  }
+  
+  .service-popup-box strong {
+    font-size: 14px !important;    /* Same size as content for mobile */
+  }
+  
+  .service-popup-box p {
+    font-size: 12px !important;    /* Consistent font size for mobile */
+    line-height: 1.1 !important;   /* Compact line spacing for mobile */
+  }
+}
+
+/* FAQ Font Size Configuration */
+/* Tablet view (max-width: 1023px) */
+@media (max-width: 1023px) {
+  .faq-question h3 {
+    font-size: 16px !important;     /* Slightly smaller question text for tablet */
+  }
+  
+  .faq-answer p {
+    font-size: 14px !important;     /* Smaller answer text for tablet */
+    line-height: 1.4 !important;    /* Comfortable line spacing */
+  }
+  
+  .faq-more-btn,
+  .faq-hide-btn {
+    font-size: 14px !important;     /* Smaller button text */
+  }
+}
+
+/* Mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+  .faq-question h3 {
+    font-size: 12px !important;     /* Even smaller question text for mobile */
+  }
+  
+  .faq-answer p {
+    font-size: 11px !important;     /* Smaller answer text for mobile */
+    line-height: 1.3 !important;    /* Tighter line spacing for mobile */
+  }
+  
+  .faq-more-btn,
+  .faq-hide-btn {
+    font-size: 12px !important;     /* Smaller button text for mobile */
+  }
+}
+
+/* Desktop: left align saja, tanpa justify */
+.header-quote {
+  margin: -5px 0 0 0;         /* Hapus auto agar tidak selalu center */
+  max-width: none;            /* Ikuti lebar parent */
+  font-size: 20px;
+  color: #ffffff;
+  font-style: normal;
+  text-align: center;
+  line-height: 1.0;
+  letter-spacing: 0.2px;
+  padding-left: 0;            /* Hapus padding agar rata dengan h1 */
+  padding-right: 0;
+  opacity: 1;
+  animation: none;
+  display: block;
+}
+
+/* Mobile & Tablet: center align */
+@media (max-width: 1023px) {
+  .header-quote {
+    text-align: center;
+    margin: 10px 0 0 0; 
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 95vw;
+  }
+}
+
+@keyframes popOut {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.7); }
+}
+.pop-out {
+  animation: popOut 0.5s forwards;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+#header-title span {
+  color: #C71F37;
+  font-weight: 700;
+}
+
+
