@@ -522,3 +522,104 @@ document.querySelectorAll('.radar-circle').forEach((circle, index) => {
     });
 });
 
+// Testimonial carousel
+function initTestimonialCarousel() {
+    const quotes = document.querySelectorAll('.landing-quote1, .landing-quote2, .landing-quote3');
+    let currentIndex = 0;
+
+    // Set initial state
+    quotes[0].classList.add('active');
+
+    // Function to show next testimonial
+    function showNextTestimonial() {
+        quotes[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % quotes.length;
+        quotes[currentIndex].classList.add('active');
+    }
+
+    // Start the carousel
+    setInterval(showNextTestimonial, 6000);
+}
+
+// Initialize testimonial carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initTestimonialCarousel();
+});
+
+document.querySelector('.mobile-booking-btn').addEventListener('click', function() {
+    const bookingGuide = document.querySelector('.booking-guide');
+    bookingGuide.classList.toggle('show');
+    
+    // Toggle button state and text
+    this.classList.toggle('active');
+    this.textContent = this.classList.contains('active') ? 'Tutup' : 'Booking Sekarang';
+});
+
+// Star fill + rating counter animation
+function animateRating(targetRating = 4.9, duration = 1800) {
+  const stars = document.querySelectorAll('.star-svg');
+  const counter = document.getElementById('rating-counter');
+  let current = 0;
+  let lastStar = -1;
+  const steps = 60;
+  let frame = 0;
+
+  function easeOutBounce(x) {
+    // https://easings.net/#easeOutBounce
+    const n1 = 7.5625, d1 = 2.75;
+    if (x < 1 / d1) return n1 * x * x;
+    else if (x < 2 / d1) return n1 * (x -= 1.5 / d1) * x + 0.75;
+    else if (x < 2.5 / d1) return n1 * (x -= 2.25 / d1) * x + 0.9375;
+    else return n1 * (x -= 2.625 / d1) * x + 0.984375;
+  }
+
+  function animate() {
+    frame++;
+    const progress = Math.min(frame / steps, 1);
+    // Animate rating number
+    const eased = easeOutBounce(progress);
+    const value = (targetRating * eased).toFixed(1);
+    counter.textContent = value;
+
+    // Animate stars
+    const starCount = Math.floor(targetRating * eased);
+    if (starCount !== lastStar) {
+      stars.forEach((star, i) => {
+        if (i < starCount) star.classList.add('filled');
+        else star.classList.remove('filled');
+      });
+      lastStar = starCount;
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      // Final state
+      counter.textContent = targetRating.toFixed(1);
+      stars.forEach((star, i) => {
+        if (i < Math.floor(targetRating)) star.classList.add('filled');
+        else star.classList.remove('filled');
+      });
+      // Animate counter bounce
+      counter.classList.add('bounce');
+      setTimeout(() => counter.classList.remove('bounce'), 600);
+    }
+  }
+  animate();
+}
+
+// Jalankan animasi saat halaman siap
+document.addEventListener('DOMContentLoaded', function() {
+  animateRating(4.9, 1800); // Ganti 4.9 dengan rating target
+});
+
+// 4 detik animasi naik + 1 detik standby, lalu pop out
+setTimeout(function() {
+  document.querySelector('.rating-animated-container').classList.add('hide-rating');
+}, 5000); // 4 detik animasi + 1 detik standby = 5 detik
+
+// Setelah pop out selesai (0.7 detik), hilangkan dari DOM
+setTimeout(function() {
+  document.querySelector('.rating-animated-container').style.display = 'none';
+}, 5700); // 5 detik + 0.7 detik animasi pop out
+
