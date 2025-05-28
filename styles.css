@@ -3904,21 +3904,3 @@ nav {
     animation: fade-rating-out 1s linear forwards;
 }
 
-setTimeout(function() {
-  document.querySelector('.rating-animated-container').style.display = 'none';
-}, 6000); // 1 detik setelah animasi fade-out selesai
-
-// Jalankan animasi saat halaman siap
-document.addEventListener('DOMContentLoaded', function() {
-  animateRating(4.9, 7000); // 7 detik
-});
-
-// 7 detik animasi naik, lalu pop out
-setTimeout(function() {
-  document.querySelector('.rating-animated-container').classList.add('hide-rating');
-}, 7000); // 7 detik animasi
-
-// Setelah pop out selesai (0.7 detik), hilangkan dari DOM
-setTimeout(function() {
-  document.querySelector('.rating-animated-container').style.display = 'none';
-}, 7700); // 7 detik + 0.7 detik animasi pop out
