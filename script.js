@@ -623,3 +623,5 @@ setTimeout(function() {
   document.querySelector('.rating-animated-container').style.display = 'none';
 }, 5700); // 5 detik + 0.7 detik animasi pop out
 
+
+

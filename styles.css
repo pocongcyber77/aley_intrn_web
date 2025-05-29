@@ -1887,51 +1887,6 @@ nav, nav ul {
 .hamburger.active span:nth-child(2) { opacity: 0;}
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px);}
 
-.audio-wave {
-    width: 100%;
-    height: 60px;
-    margin: 0;
-    position: relative;
-    opacity: 1;
-    background: transparent;
-    overflow: hidden;
-}
-
-.wave {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.wave-path {
-    stroke: #ffffff;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    opacity: 0.1; /* Set opacity to 10% */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.03)); /* Reduced shadow opacity to match */
-    transition: d 0.05s linear;
-}
-
-/* Multiple waves for dynamic effect */
-.audio-wave .wave:nth-child(1) { opacity: 0.1; }
-.audio-wave .wave:nth-child(2) { opacity: 0.08; }
-.audio-wave .wave:nth-child(3) { opacity: 0.06; }
-.audio-wave .wave:nth-child(4) { opacity: 0.04; }
-.audio-wave .wave:nth-child(5) { opacity: 0.03; }
-.audio-wave .wave:nth-child(6) { opacity: 0.02; }
-.audio-wave .wave:nth-child(7) { opacity: 0.01; }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .audio-wave {
-        height: 40px;
-    }
-}
 
 /* Styling for the service popup container */
 .service-popup-container {
@@ -2664,30 +2619,9 @@ nav {
     }
 }
 
-/* Hide audio wave on mobile and tablet */
-@media (max-width: 1023px) {
-    .audio-wave {
-        display: none !important;
-    }
-    
-    .wave {
-        display: none !important;
-    }
-    
-    .wave-path {
-        display: none !important;
-    }
-}
 
 /* Additional mobile-specific adjustments */
 @media (max-width: 430px) {
-    .audio-wave,
-    .wave,
-    .wave-path,
-    .svg-circles,
-    .radar-circle {
-        display: none !important;
-    }
 
     nav {
         padding: 5px 20px;
@@ -3903,4 +3837,326 @@ nav {
 .rating-animated-container.hide-rating {
     animation: fade-rating-out 1s linear forwards;
 }
+/* ===== DESKTOP-LIKE LANDSCAPE MODE (932x430) ===== */
+@media screen and (max-width: 932px) and (max-height: 430px) and (orientation: landscape) {
+    /* ========== GLOBAL SETTINGS ========== */
+    /* Reset overflow dan dimensi dasar */
+    body, html {
+      overflow-x: hidden; /* Matikan scroll horizontal */
+      width: 100% !important; /* Paksa lebar 100% */
+      height: auto !important; /* Tinggi menyesuaikan konten */
+    }
+    
+    /* ========== CONTAINER LAYOUT ========== */
+    /* Pengaturan container utama */
+    .container {
+      padding: 30px 8% !important; /* Padding lebih besar di sisi kiri/kanan */
+      margin: 0 auto !important; /* Posisi tengah */
+      max-width: 1200px !important; /* Batas lebar maksimum */
+      width: 100% !important; /* Lebar penuh */
+    }
+  
+    /* ========== NAVBAR DESKTOP STYLE ========== */
+    /* Style navigasi desktop */
+    nav {
+      display: flex !important; /* Flex layout */
+      justify-content: space-between !important; /* Jarak antar item */
+      align-items: center !important; /* Rata tengah vertikal */
+      padding: 15px 8% !important; /* Padding navigasi */
+      height: auto !important; /* Tinggi otomatis */
+      position: fixed !important; /* Posisi tetap di atas */
+      width: 100% !important; /* Lebar penuh */
+      z-index: 1000 !important; /* Layer atas */
+      background: rgba(8, 8, 8, 0.98) !important; /* Warna background */
+      backdrop-filter: blur(8px) !important; /* Efek blur */
+    }
+  
+    /* Style logo */
+    .logo {
+      width: 120px !important; /* Lebar logo */
+      height: auto !important; /* Tinggi proporsional */
+    }
+  
+    /* Style menu navigasi */
+    nav ul {
+      display: flex !important; /* Tampilan flex */
+      position: static !important; /* Posisi normal */
+      width: auto !important; /* Lebar menyesuaikan */
+      height: auto !important; /* Tinggi menyesuaikan */
+      background: transparent !important; /* Background transparan */
+      flex-direction: row !important; /* Arah horizontal */
+      transform: none !important; /* Tanpa transformasi */
+      padding: 0 !important; /* Tanpa padding */
+      margin: 0 !important; /* Tanpa margin */
+    }
+  
+    /* Style item menu */
+    nav ul li {
+      display: inline-block !important; /* Tampilan inline */
+      margin: 0 15px !important; /* Jarak antar item */
+      padding: 0 !important; /* Tanpa padding */
+      opacity: 1 !important; /* Tidak transparan */
+      transform: none !important; /* Tanpa transformasi */
+      transition: none !important; /* Tanpa transisi */
+    }
+  
+    /* Style link menu */
+    nav ul li a {
+      font-size: 16px !important; /* Ukuran font */
+      padding: 5px 0 !important; /* Padding atas/bawah */
+    }
+  
+    /* Tombol menu mobile disembunyikan */
+    .menu-btn {
+      display: none !important;
+    }
+  
+    /* ========== HEADER SECTION ========== */
+    /* Style header utama */
+    #header {
+      height: 100vh; /* Tinggi viewport */
+      min-height: 430px; /* Tinggi minimum */
+      display: flex !important; /* Flex layout */
+      align-items: center !important; /* Rata tengah vertikal */
+      justify-content: center !important; /* Rata tengah horizontal */
+      text-align: center !important; /* Teks rata tengah */
+      padding: 80px 0 !important; /* Padding atas/bawah */
+    }
+  
+    /* Container teks header */
+    .header-text {
+      width: 100% !important; /* Lebar penuh */
+      max-width: 800px !important; /* Batas lebar */
+      margin: 0 auto !important; /* Posisi tengah */
+      padding: 0 20px !important; /* Padding kiri/kanan */
+    }
+  
+    /* Judul utama */
+    .header-text h1 {
+      font-size: 36px !important; /* Ukuran font */
+      margin: 0 auto 20px !important; /* Margin bawah */
+      text-align: center !important; /* Rata tengah */
+    }
+  
+    /* ========== ABOUT SECTION ========== */
+    /* Style section About */
+    #about {
+      padding: 80px 0 !important; /* Padding atas/bawah */
+      text-align: center !important; /* Teks rata tengah */
+      margin: 0 !important; /* Reset margin */
+    }
+  
+    /* Container row */
+    .row {
+      display: flex !important; /* Flex layout */
+      flex-direction: row !important; /* Arah horizontal */
+      justify-content: center !important; /* Rata tengah */
+      align-items: flex-start !important; /* Rata atas */
+      gap: 40px !important; /* Jarak antar kolom */
+      margin: 0 auto !important; /* Posisi tengah */
+      max-width: 1200px !important; /* Batas lebar */
+    }
+  
+    /* Kolom kiri (gambar/video) */
+    .about-col-1, 
+    /* Kolom kanan (teks) */
+    .about-col-2 {
+      flex: 1 !important; /* Fleksibel */
+      min-width: 300px !important; /* Lebar minimum */
+      max-width: 50% !important; /* Batas lebar */
+      padding: 0 15px !important; /* Padding kiri/kanan */
+      margin: 0 !important; /* Reset margin */
+      text-align: left !important; /* Teks rata kiri */
+    }
+  
+    /* Judul section */
+    .sub-title {
+      font-size: 32px !important; /* Ukuran font */
+      margin: 0 auto 30px !important; /* Margin bawah */
+      text-align: center !important; /* Rata tengah */
+    }
+  
+    /* Container tab menu */
+    .tab-titles {
+      justify-content: center !important; /* Rata tengah */
+      margin: 30px auto !important; /* Margin atas/bawah */
+      padding: 0 !important; /* Reset padding */
+      width: 100% !important; /* Lebar penuh */
+    }
+  
+    /* Style tab link */
+    .tab-links {
+      margin: 0 20px !important; /* Jarak horizontal */
+      font-size: 18px !important; /* Ukuran font */
+    }
+  
+    /* ========== FORCE ABOUT SECTION MARGIN ========== */
+    /* Paksa margin khusus untuk halaman About */
+    #about .container {
+      margin: 0 auto !important; /* Posisi tengah */
+      padding: 0 5% !important; /* Padding lebih kecil */
+    }
+    
+    #about .row {
+      margin: 0 -10px !important; /* Margin negatif untuk kompensasi */
+    }
+    
+    #about .about-col-1,
+    #about .about-col-2 {
+      margin: 0 10px !important; /* Margin antar kolom */
+      padding: 0 20px !important; /* Padding internal lebih besar */
+    }
+  
+    /* ========== SERVICES SECTION ========== */
+    /* Style section Services */
+    #services {
+      padding: 80px 0 !important; /* Padding atas/bawah */
+    }
+  
+    /* Grid layout services */
+    .services-list {
+        /* Grid Layout Settings */
+        grid-template-columns: repeat(3, minmax(200px, 1fr)) !important; /* 3 responsive columns */
+        gap: 30px !important; /* Spacing between items */
+        margin: 0 auto !important; /* Center alignment */
+        max-width: 1400px !important; /* Maximum container width */
+        
+        /* Height Control Additions */
+        min-height: 300px !important; /* Minimum height to prevent collapsing */
+        max-height: 1400px !important; /* Maximum height to prevent overflow */
+        height: auto !important; /* Flexible height based on content */
+        overflow-y: auto !important; /* Enable vertical scrolling if needed */
+        
+        /* Content Alignment */
+        align-items: stretch !important; /* Uniform item height */
+        padding: 1px 1px !important; /* Internal spacing */
+        
+        /* Visual Consistency */
+        box-sizing: border-box !important; /* Include padding in dimensions */
+      }
+      
+   
+  
 
+  
+    /* ========== FAQ SECTION ========== */
+    /* Style section FAQ */
+    #faq {
+      padding: 0px 0 !important; /* Padding atas/bawah */
+      display: block !important; /* Pastikan tampil */
+    }
+  
+    /* Container FAQ */
+    .faq-container {
+      max-width: 800px !important; /* Batas lebar */
+      margin: 0 auto !important; /* Posisi tengah */
+    }
+  
+    /* Item FAQ */
+    .faq-item {
+      margin-bottom: 25px !important; /* Jarak antar item */
+    }
+  
+    /* ========== PORTFOLIO SECTION ========== */
+    /* Grid layout portfolio */
+    .work-list {
+      grid-template-columns: repeat(3, minmax(250px, 1fr)) !important; /* 3 kolom */
+      gap: 25px !important; /* Jarak antar item */
+      margin: 0 auto !important; /* Posisi tengah */
+      max-width: 1200px !important; /* Batas lebar */
+    }
+  
+    /* Item portfolio */
+    .work {
+      height: 250px !important; /* Tinggi tetap */
+    }
+  
+    /* ========== CONTACT SECTION ========== */
+    /* Layout panduan booking */
+    .booking-guide {
+      flex-direction: row !important; /* Arah horizontal */
+      justify-content: center !important; /* Rata tengah */
+      gap: 40px !important; /* Jarak antar kolom */
+      max-width: 1200px !important; /* Batas lebar */
+      margin: 50px auto 0 !important; /* Margin atas */
+    }
+  
+    /* Kolom steps */
+    .guide-steps {
+      flex: 1 !important; /* Fleksibel */
+      max-width: 600px !important; /* Batas lebar */
+    }
+  
+    /* Kolom custom service */
+    .custom-service {
+      flex: 0 0 350px !important; /* Lebar tetap */
+    }
+  
+    /* ========== FOOTER SECTION ========== */
+    /* Style footer */
+    .footer {
+      padding: 60px 0 40px !important; /* Padding atas/bawah */
+    }
+  
+    /* ========== UNIVERSAL CENTER ALIGN ========== */
+    /* Style untuk elemen yang harus rata tengah */
+    .header-text,
+    .sub-title,
+    .tab-titles,
+    #services h1,
+    #portfolio h1,
+    #faq h1,
+    #contact h1,
+    .footer-content {
+      text-align: center !important; /* Rata tengah */
+      margin-left: auto !important; /* Margin otomatis */
+      margin-right: auto !important; /* Margin otomatis */
+    }
+  
+    /* ========== SCROLL FIX ========== */
+    /* Penyesuaian scroll untuk navbar fixed */
+    html {
+      scroll-padding-top: 80px; /* Padding atas saat scroll */
+    }
+  }
+
+/* Styling khusus untuk mode landscape HP (932 x 430) */
+@media screen and (max-width: 932px) and (orientation: landscape) {
+    /* ... existing code ... */
+
+    /* Testimonial - Posisi pojok bawah kiri dengan ukuran 2x lebih panjang */
+    .landing-quote1, .landing-quote2, .landing-quote3 {
+        position: absolute !important;
+        left: 20px !important;
+        bottom: 20px !important;
+        transform: scale(0.5) !important;
+        transform-origin: left bottom !important;
+        z-index: 999 !important;
+        width: 100% !important;
+        max-width: 600px !important;
+        padding: 20px !important;
+        background: rgba(8, 8, 8, 0.95) !important; /* Ubah ke warna gelap */
+        border-radius: 10px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important; /* Shadow lebih gelap */
+        color: #fff !important; /* Warna teks putih */
+        z-index: 0 !important;
+    }
+
+    /* Pastikan konten testimonial tetap terbaca */
+    .landing-quote1 p, .landing-quote2 p, .landing-quote3 p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin: 8px 0 !important;
+        text-align: left !important;
+        color: #fff !important; /* Warna teks putih */
+    }
+
+    .landing-quote1 h4, .landing-quote2 h4, .landing-quote3 h4 {
+        font-size: 16px !important;
+        margin: 8px 0 !important;
+        text-align: left !important;
+        color: #fff !important; /* Warna teks putih */
+    }
+
+    /* ... existing code ... */
+}
